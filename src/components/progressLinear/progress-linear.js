@@ -145,13 +145,10 @@ function MdProgressLinearDirective($mdTheming, $mdUtil, $log) {
      * Auto-defaults the mode to either `determinate` or `indeterminate` mode; if not specified
      */
     function validateMode() {
-      if ( angular.isUndefined(attr.mdMode) ) {
+      if (angular.isUndefined(attr.mdMode)) {
         var hasValue = angular.isDefined(attr.value);
         var mode = hasValue ? MODE_DETERMINATE : MODE_INDETERMINATE;
         var info = "Auto-adding the missing md-mode='{0}' to the ProgressLinear element";
-
-        //$log.debug( $mdUtil.supplant(info, [mode]) );
-
         element.attr("md-mode", mode);
         attr.mdMode = mode;
       }
